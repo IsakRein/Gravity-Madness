@@ -1,0 +1,12 @@
+Adobe After Effects v13.5 Windows 64 render log for project “ArrowEffect.aep”
+
+Rendering started on 2/4/2017 at 3:04:15 PM
+
+  2/4/2017 3:04:15 PM: Starting composition “Comp 2”.
+
+  Output To: D:\Unity\Gravity Madness 2\Assets\Sprites\ArrowEffect\Arrows3\Arrow_[#####].png    2/4/2017 3:04:20 PM: Finished composition “Comp 2”.
+
+
+  Total Time Elapsed: 5 Seconds
+Log closed on 2/4/2017 at 3:04:20 PM
+

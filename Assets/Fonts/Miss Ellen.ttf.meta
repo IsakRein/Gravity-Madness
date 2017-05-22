@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 45563964ef942cd4eac480f654044b4e
+timeCreated: 1493997956
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Miss Ellen
+  fontNames:
+  - Miss Ellen
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
