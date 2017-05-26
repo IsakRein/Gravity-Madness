@@ -45,10 +45,12 @@ public class LevelScript : MonoBehaviour {
         }
     }
 
+
     void OnEnable()
     {
         DisplayLevel(currentLevelScore);
     }
+
 
     void Update()
     {
@@ -78,25 +80,22 @@ public class LevelScript : MonoBehaviour {
     }
 
 
-    void LeftOnClick()
+    public void LeftOnClick()
     {
         currentLevelScore = currentLevelScore - 1;
         DisplayLevel(currentLevelScore);
     }
 
-
-    void RightOnClick()
+    public void RightOnClick()
     {
         currentLevelScore = currentLevelScore + 1;
         DisplayLevel(currentLevelScore);
-        Player.LoadPos();
     }
 
 
-    void RetryOnClick()
+    public void RetryOnClick()
     {
         DisplayLevel(currentLevelScore);
-        Player.LoadPos();
     }
 
 

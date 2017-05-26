@@ -26415,8 +26415,8 @@ MonoBehaviour:
   rb: {fileID: 94728169}
   gravityOption: -1
   au_impact: {fileID: 0}
-  gravityButtonLeft: {fileID: 412769335}
-  gravityButtonRight: {fileID: 1876062030}
+  gravityButtonLeft: {fileID: 0}
+  gravityButtonRight: {fileID: 0}
   playButton: {fileID: 1064483070}
   homeScreenCanvas: {fileID: 1568822087}
   levelSelect: {fileID: 747513981}
@@ -31420,12 +31420,6 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 351249700}
-    - target: {fileID: 212696423321772706, guid: 7bee683df5bf1de498241f72854dc464,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: db661ba92b98c77478042203f459e121,
-        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bee683df5bf1de498241f72854dc464, type: 2}
   m_IsPrefabParent: 0

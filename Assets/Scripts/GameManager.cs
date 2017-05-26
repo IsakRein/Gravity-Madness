@@ -37,8 +37,10 @@ public class GameManager : MonoBehaviour {
         levelSelect.gameObject.SetActive(false);
         homeScreenCanvas.gameObject.SetActive(true);
 
+        /*
         gravityButtonLeft.onClick.AddListener(GravityLeft);
         gravityButtonRight.onClick.AddListener(GravityRight);
+        */
 
         playButton.onClick.AddListener(PlayOnClick);
 
@@ -170,6 +172,7 @@ public class GameManager : MonoBehaviour {
     }
 
 
+    /*
     void GravityLeft()
     {
         if (gravityOption != 3)
@@ -204,6 +207,7 @@ public class GameManager : MonoBehaviour {
         rb.WakeUp();
         rb.isKinematic = false;
     }
+    */
 
 
     void PlayOnClick()
