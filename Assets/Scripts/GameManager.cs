@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour {
         levelSelect.gameObject.SetActive(false);
         homeScreenCanvas.gameObject.SetActive(true);
 
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
         /*
         gravityButtonLeft.onClick.AddListener(GravityLeft);
         gravityButtonRight.onClick.AddListener(GravityRight);
