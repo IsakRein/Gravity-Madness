@@ -218,7 +218,7 @@ public class GameManager : MonoBehaviour {
     }
 
 
-    public void CheckGravity ()
+    void CheckGravity ()
     {
         //idle
         if (gravityOption == -1)
