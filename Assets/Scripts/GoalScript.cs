@@ -10,11 +10,11 @@ public class GoalScript : MonoBehaviour {
 
     void Start () {
         currentLevelScore = Levels.currentLevelScore;
-        LoadPos();
+        GoalLoadPos();
     }
 
 
-    public void LoadPos()
+    public void GoalLoadPos()
     {
         currentLevelScore = Levels.currentLevelScore;
         levelName = "Level (" + currentLevelScore + ")";

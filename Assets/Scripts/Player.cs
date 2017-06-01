@@ -32,11 +32,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
         levelScore = GameManager.levelScore;
-
         currentLevelScore = Levels.currentLevelScore;
-
         LoadPos();
     }
 
@@ -88,9 +85,8 @@ public class Player : MonoBehaviour
                 transform.position = startPosition;
             }
         }
-        Goal.LoadPos();
+        Goal.GoalLoadPos();
 
-        rb.velocity = new Vector3 (0, 0, 0);
         rb.Sleep();
         rb.isKinematic = true;
         transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0);

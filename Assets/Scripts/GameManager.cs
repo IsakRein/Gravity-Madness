@@ -60,12 +60,21 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+
+    void Update()
+    {
+        SwipeDetect();
+        rb.WakeUp();
+        rb.isKinematic = false;
+        ArrowsControl();
+        CheckGravity();
+    }
+
     
     void SwipeDetect ()
     {
         if (Input.touchCount > 0)
         {
-
             foreach (Touch touch in Input.touches)
             {
                 switch (touch.phase)
@@ -135,16 +144,6 @@ public class GameManager : MonoBehaviour {
             rb.isKinematic = false;
         }
 
-    }
-
-
-    void Update()
-    {
-        SwipeDetect();
-        rb.WakeUp();
-        rb.isKinematic = false;
-        ArrowsControl();
-        CheckGravity();
     }
 
 
@@ -219,7 +218,7 @@ public class GameManager : MonoBehaviour {
     }
 
 
-    void CheckGravity ()
+    public void CheckGravity ()
     {
         //idle
         if (gravityOption == -1)
