@@ -3524,7 +3524,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 114912030
+  randomSeed: 1762804727
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -18397,7 +18397,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: -4
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!1 &1003611639
 GameObject:

@@ -87,9 +87,6 @@ public class Player : MonoBehaviour
         }
         Goal.GoalLoadPos();
 
-        rb.Sleep();
-        rb.isKinematic = true;
-        transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0);
         GameManager.gravityOption = -1;
 
         LevelText.txt.text = "" + currentLevelScore;
