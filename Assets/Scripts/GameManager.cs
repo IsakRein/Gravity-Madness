@@ -92,7 +92,6 @@ public class GameManager : MonoBehaviour {
                         break;
 
                     case TouchPhase.Moved:
-
                         float gestureTime = Time.time - fingerStartTime;
                         float gestureDist = (touch.position - fingerStartPos).magnitude;
 
@@ -136,7 +135,8 @@ public class GameManager : MonoBehaviour {
                                 }
                             }
                         }
-
+                        fingerStartTime = Time.time;
+                        fingerStartPos = touch.position;
                         break;
                 }
             }
