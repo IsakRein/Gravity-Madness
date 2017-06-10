@@ -13867,7 +13867,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 0
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &743468163
 GameObject:
@@ -31417,6 +31417,31 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 351249700}
+    - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
+        type: 2}
+      propertyPath: middleScreen
+      value: 
+      objectReference: {fileID: 740124236}
+    - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
+        type: 2}
+      propertyPath: fadeInTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
+        type: 2}
+      propertyPath: fadeOutTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
+        type: 2}
+      propertyPath: visibleTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
+        type: 2}
+      propertyPath: canvasGroup
+      value: 
+      objectReference: {fileID: 740124241}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bee683df5bf1de498241f72854dc464, type: 2}
   m_IsPrefabParent: 0

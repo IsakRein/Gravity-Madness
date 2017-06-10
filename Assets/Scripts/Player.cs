@@ -33,6 +33,15 @@ public class Player : MonoBehaviour
     private float goalAnimationSpeed = 1.0f;
     public Vector2 goalPosition;
 
+    //in between levels
+    public CanvasGroup canvasGroup;
+    public float fadeInTime;
+    public float fadeOutTime;
+    public float visibleTime;
+    public bool InBetweenLevelsBool;
+    public bool InBetweenLevelsVisible = false;
+    public float transitionTime;
+
     void Start()
     {
         levelScore = GameManager.levelScore;
@@ -45,6 +54,7 @@ public class Player : MonoBehaviour
     {
         TimeManager();
         GoalAnimation();
+        InBetweenLevels();
     }
 
 
@@ -74,7 +84,7 @@ public class Player : MonoBehaviour
             
             //rotate
             //transform.Translate(0, -step * Time.deltaTime, 0, Space.World);
-            transform.Rotate(Vector3.forward * step * Time.deltaTime);
+            transform.Rotate(Vector3.forward * step * 50000 * Time.deltaTime);
             
             //make smaller
             Vector3 zeroScale = new Vector3(0, 0, 0);
@@ -118,6 +128,29 @@ public class Player : MonoBehaviour
         GameManager.gravityOption = -1;
 
         LevelText.txt.text = "" + currentLevelScore;
+
+        InBetweenLevelsBool = true;
+    }
+
+
+    void InBetweenLevels() 
+    {
+        if (InBetweenLevelsBool == true) {
+            canvasGroup.blocksRaycasts = true;
+            //fade in
+            if (InBetweenLevelsVisible == false) {
+                transitionTime += Time.deltaTime * fadeInTime;
+                canvasGroup.alpha = transitionTime;
+
+                if (canvasGroup.alpha == 1) {
+                    InBetweenLevelsVisible = true;
+                }
+            }
+
+            //visible
+            //else () 
+                
+        }
     }
 
 
