@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour {
     private float minSwipeDist = 50.0f;
     private float maxSwipeTime = 0.5f;
 
+    public bool controlsEnabled = true;
+
 
     void Start () {
         game.gameObject.SetActive(false);
@@ -73,7 +75,7 @@ public class GameManager : MonoBehaviour {
     
     void SwipeDetect ()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && controlsEnabled)
         {
             foreach (Touch touch in Input.touches)
             {
@@ -149,23 +151,26 @@ public class GameManager : MonoBehaviour {
 
     void ArrowsControl()
     {
-        if (Input.GetKey("down"))
-        {
-            gravityOption = 0;
-        }
-        if (Input.GetKey("left"))
-        {
-            gravityOption = 3;
-        }
-        if (Input.GetKey("up"))
-        {
-            gravityOption = 2;
-        }
-        if (Input.GetKey("right"))
-        {
-            gravityOption = 1;
+        if (controlsEnabled == true) {
+            if (Input.GetKey("down"))
+            {
+                gravityOption = 0;
+            }
+            if (Input.GetKey("left"))
+            {
+                gravityOption = 3;
+            }
+            if (Input.GetKey("up"))
+            {
+                gravityOption = 2;
+            }
+            if (Input.GetKey("right"))
+            {
+                gravityOption = 1;
+            }
         }
     }
+
 
     public void UpdateLevel()
     {

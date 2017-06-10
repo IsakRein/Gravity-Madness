@@ -25,13 +25,16 @@ public class Player : MonoBehaviour
     public GameObject Eyes;
     public GameObject Eyes2;
     private bool eyesClosed = false;
-    float timeLeft = 1.0f;
-    float blinkTime = 0.1f;
+    public float timeLeft = 1.0f;
+    public float blinkTime = 0.1f;
 
+    //goalanimation
+    private bool goalAnimationBool = false;
+    private float goalAnimationSpeed = 1.0f;
+    public Vector2 goalPosition;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         levelScore = GameManager.levelScore;
         currentLevelScore = Levels.currentLevelScore;
         LoadPos();
@@ -41,6 +44,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         TimeManager();
+        GoalAnimation();
     }
 
 
@@ -48,8 +52,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Goal"))
         {
-            NewLevel();
-            LoadPos();
+            goalAnimationBool = true; 
         }
 
         else if (other.gameObject.CompareTag("Spike"))
@@ -59,16 +62,39 @@ public class Player : MonoBehaviour
     }
 
 
-    void NewLevel()
-    {
-        if (levelScore == currentLevelScore)
-        {
-            levelScore = levelScore + 1;
-            Levels.levelScore = levelScore;
-            GameManager.levelScore = levelScore;
-            GameManager.UpdateLevel();
+
+    void GoalAnimation() {
+        if (goalAnimationBool == true) {
+            GameManager.gravityOption = -1;
+            GameManager.controlsEnabled = false;
+            float step = goalAnimationSpeed * Time.deltaTime;
+            
+            //move to middle
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+            
+            //rotate
+            //transform.Translate(0, -step * Time.deltaTime, 0, Space.World);
+            
+            //make smaller
+            Vector3 zeroScale = new Vector3(0, 0, 0);
+            if (transform.localScale > zeroScale) {
+                transform.localScale -= Vector3.one*Time.deltaTime*step;
+            }
         }
-        Levels.CheckIfWon();
+
+        if (transform.position == target.position) {
+            goalAnimationBool = false;
+            if (levelScore == currentLevelScore)
+                {
+                    levelScore = levelScore + 1;
+                    Levels.levelScore = levelScore;
+                    GameManager.levelScore = levelScore;
+                    GameManager.UpdateLevel();
+                }
+            Levels.CheckIfWon();
+            LoadPos();
+            GameManager.controlsEnabled = true;
+        }
     }
 
 
@@ -86,7 +112,8 @@ public class Player : MonoBehaviour
             }
         }
         Goal.GoalLoadPos();
-
+        
+        transform.localScale = new Vector3(0.0165f, 0.0165f, 1f);
         GameManager.gravityOption = -1;
 
         LevelText.txt.text = "" + currentLevelScore;

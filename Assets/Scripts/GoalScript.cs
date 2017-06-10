@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoalScript : MonoBehaviour {
     public string levelName;
     public int currentLevelScore;
-    private Vector3 startPosition;
+    public Vector3 startPosition;
     public LevelScript Levels;
 
     void Start () {
