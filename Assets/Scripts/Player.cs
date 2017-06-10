@@ -74,10 +74,11 @@ public class Player : MonoBehaviour
             
             //rotate
             //transform.Translate(0, -step * Time.deltaTime, 0, Space.World);
+            transform.Rotate(Vector3.forward * step * Time.deltaTime);
             
             //make smaller
             Vector3 zeroScale = new Vector3(0, 0, 0);
-            if (transform.localScale > zeroScale) {
+            if (transform.localScale.magnitude > zeroScale.magnitude) {
                 transform.localScale -= Vector3.one*Time.deltaTime*step;
             }
         }
