@@ -31425,23 +31425,28 @@ Prefab:
     - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
         type: 2}
       propertyPath: fadeInTime
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
         type: 2}
       propertyPath: fadeOutTime
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
         type: 2}
       propertyPath: visibleTime
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
         type: 2}
       propertyPath: canvasGroup
       value: 
       objectReference: {fileID: 740124241}
+    - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
+        type: 2}
+      propertyPath: InBetweenLevelsBool
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bee683df5bf1de498241f72854dc464, type: 2}
   m_IsPrefabParent: 0
