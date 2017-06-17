@@ -230,7 +230,6 @@ public class GameManager : MonoBehaviour {
         {
             rb.Sleep();
             rb.isKinematic = true;
-            rb.transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0);
             Physics2D.gravity = new Vector2(0, 0);
         }
 

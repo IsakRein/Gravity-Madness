@@ -13771,9 +13771,9 @@ GameObject:
   m_Component:
   - component: {fileID: 740124240}
   - component: {fileID: 740124239}
-  - component: {fileID: 740124238}
   - component: {fileID: 740124237}
   - component: {fileID: 740124241}
+  - component: {fileID: 740124238}
   m_Layer: 5
   m_Name: New Level Screen
   m_TagString: Untagged
@@ -13808,11 +13808,11 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 1
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -13866,7 +13866,7 @@ CanvasGroup:
   m_GameObject: {fileID: 740124236}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
+  m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &743468163
@@ -22433,7 +22433,7 @@ Camera:
   far clip plane: 1222.32
   field of view: 60
   orthographic: 1
-  orthographic size: 8.91129
+  orthographic size: 8.888889
   m_Depth: -60.19
   m_CullingMask:
     serializedVersion: 2
@@ -31430,7 +31430,7 @@ Prefab:
     - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
         type: 2}
       propertyPath: fadeOutTime
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
         type: 2}
@@ -31446,6 +31446,16 @@ Prefab:
         type: 2}
       propertyPath: InBetweenLevelsBool
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
+        type: 2}
+      propertyPath: transitionText
+      value: 
+      objectReference: {fileID: 2030766742}
+    - target: {fileID: 114834080894683972, guid: 7bee683df5bf1de498241f72854dc464,
+        type: 2}
+      propertyPath: goalAnimationSpeed
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bee683df5bf1de498241f72854dc464, type: 2}
@@ -32655,10 +32665,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 898a09ee5d768324382948225cb0e8a7, type: 3}
-    m_FontSize: 74
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 1

@@ -99,11 +99,10 @@ public class LevelScript : MonoBehaviour {
     }
 
 
-    public void CheckIfWon()
+    public void LevelWon()
     {
         currentLevelScore = currentLevelScore + 1;
         DisplayLevel(currentLevelScore);
-        Player.LoadPos();
     }
 
 
