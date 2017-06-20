@@ -6,11 +6,11 @@ public class Player : MonoBehaviour
 {
     public AudioSource au_impact;
     public Transform target;
-    
+
     private Vector3 startPosition;
     private Rigidbody2D rb;
 
-    //scripts
+//scripts
     public GameManager GameManager;
     public LevelScript Levels;
     public GoalScript Goal;
@@ -18,19 +18,19 @@ public class Player : MonoBehaviour
 
     public float speed;
 
-    //levels
+//levels
     public int levelScore;
     public int currentLevelScore;
     private string levelName;
 
-    //eyes
+//eyes
     public GameObject Eyes;
     public GameObject Eyes2;
     private bool eyesClosed = false;
     public float timeLeft = 1.0f;
     public float blinkTime = 0.1f;
 
-    //goalanimation
+//goalanimation
     private bool goalAnimationBool = false;
     public float goalAnimationSpeed = 1.0f;
     public Vector2 goalPosition;
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     public float smooth = 1f;
     private Quaternion targetRotation;
 
-    //in between levels
+//in between levels
     public CanvasGroup canvasGroup;
     public float fadeInTime;
     public float fadeOutTime;
@@ -46,7 +46,6 @@ public class Player : MonoBehaviour
     private bool InBetweenLevelsBool;
     private bool InBetweenLevelsVisible = false;
 
-    private Vector3 zeroScale = new Vector3 (0, 0, 0);
     private bool transitionLoadLevel = true;    
     private bool transitionDisplayText = true;
 
@@ -74,47 +73,6 @@ public class Player : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(UnityEngine.Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Goal"))
-        {
-            goalAnimationBool = true; 
-            InBetweenLevelsBool = true;
-        }
-
-        else if (other.gameObject.CompareTag("Spike"))
-        {
-            LoadPos();
-        }
-    }
-
-
-
-    void GoalAnimation() {
-        if (goalAnimationBool == true) {
-            GameManager.gravityOption = -1;
-            GameManager.controlsEnabled = false;
-            float step = goalAnimationSpeed * Time.deltaTime;
-            
-            //move to middle
-            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-            
-            //rotate
-            targetRotation *=  Quaternion.AngleAxis(5, Vector3.forward);
-            transform.rotation= Quaternion.Lerp (transform.rotation, targetRotation , 10 * smooth * Time.deltaTime); 
-            
-            //make smaller
-            if (transform.localScale.magnitude > zeroScale.magnitude) {
-                transform.localScale -= Vector3.one*Time.deltaTime*step;
-            }
-        }
-
-        if (transform.position == target.position || transform.localScale.magnitude <= zeroScale.magnitude) {
-            goalAnimationBool = false;
-        }
-    }
-
-
     public void LoadPos()
     {
         currentLevelScore = Levels.currentLevelScore;
@@ -138,25 +96,66 @@ public class Player : MonoBehaviour
     }
 
 
+    void OnTriggerEnter2D(UnityEngine.Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Goal"))
+        {
+            goalAnimationBool = true; 
+            InBetweenLevelsBool = true;
+        }
+
+        else if (other.gameObject.CompareTag("Spike"))
+        {
+            LoadPos();
+        }
+    }
+
+
+    void GoalAnimation() {
+        if (goalAnimationBool == true) {
+            GameManager.gravityOption = -1;
+            GameManager.controlsEnabled = false;
+            float step = goalAnimationSpeed * Time.deltaTime;
+
+            //move to middle
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+
+            //rotate
+            targetRotation *=  Quaternion.AngleAxis(5, Vector3.forward);
+            transform.rotation= Quaternion.Lerp (transform.rotation, targetRotation , 10 * smooth * Time.deltaTime); 
+
+            //make smaller
+            if (transform.localScale.z > 0 && transform.localScale.y > 0 && transform.localScale.x > 0) {
+                transform.localScale -= Vector3.one*Time.deltaTime*step;
+            }
+        }
+
+        if (transform.localScale.z < 0 || transform.localScale.y < 0 || transform.localScale.x < 0) {
+            goalAnimationBool = false;
+        }
+    }
+
+
     void InBetweenLevels() 
     {
         if (InBetweenLevelsBool == true) {
-            
+
             if (transitionDisplayText == true) {
                 int nextLevel = currentLevelScore + 1;
                 transitionText.text = "LEVEL " + nextLevel;
 
                 transitionDisplayText = false;
             }
-            
 
             canvasGroup.blocksRaycasts = true;
+            
             //fade in
             if (InBetweenLevelsVisible == false) {
                 transitionTime += Time.deltaTime / fadeInTime;
                 canvasGroup.alpha = transitionTime;
             }
-                
+
+            //visible  
             if (canvasGroup.alpha == 1) {
                 InBetweenLevelsVisible = true;
 
@@ -174,19 +173,20 @@ public class Player : MonoBehaviour
                     transitionLoadLevel = false;
                 }
             }
-                    
+
+            //fade out
             if (transitionTime2 > 1) {
 
                 transitionTime3 -= Time.deltaTime / fadeOutTime;
                 canvasGroup.alpha = transitionTime3;
-                        
+
                 if (canvasGroup.alpha == 0) {
                     GameManager.controlsEnabled = true;
                     canvasGroup.blocksRaycasts = false;
                     InBetweenLevelsVisible = false;
                     transitionLoadLevel = true;
                     transitionDisplayText = true;
-                        
+                    
                     transitionTime = 0;
                     transitionTime2 = 0;
                     transitionTime3 = 1;
