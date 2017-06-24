@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
     //eyes
     public GameObject Eyes;
     public GameObject Eyes2;
+    public GameObject Eyes3;
+    private bool animateEyes = true;
+    private bool isDead = false;
     private bool eyesClosed = false;
     public float timeLeft = 1.0f;
     public float blinkTime = 0.1f;
@@ -71,6 +74,7 @@ public class Player : MonoBehaviour
         TimeManager();
         GoalAnimation();
         InBetweenLevels();
+        WhileDead();
     }
 
 
@@ -89,6 +93,10 @@ public class Player : MonoBehaviour
         }
         Goal.GoalLoadPos();
 
+        Eyes.gameObject.SetActive(true);
+        Eyes2.gameObject.SetActive(true);
+        Eyes3.gameObject.SetActive(false);
+
         transform.localEulerAngles = new Vector3(0,0,0);
         transform.localScale = new Vector3(0.0165f, 0.0165f, 1f);
         GameManager.gravityOption = -1;
@@ -99,15 +107,10 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(UnityEngine.Collider2D other)
     {
-        if (other.gameObject.CompareTag("Goal"))
+        if (other.gameObject.CompareTag("Goal") && isDead == false)
         {
             goalAnimationBool = true; 
             InBetweenLevelsBool = true;
-        }
-
-        else if (other.gameObject.CompareTag("Spike"))
-        {
-            LoadPos();
         }
     }
 
@@ -126,7 +129,7 @@ public class Player : MonoBehaviour
 
             //rotate
             targetRotation *=  Quaternion.AngleAxis(5, Vector3.forward);
-            transform.rotation= Quaternion.Lerp (transform.rotation, targetRotation , 10 * rotate); 
+            transform.rotation= Quaternion.Lerp (transform.rotation, targetRotation, 10 * rotate); 
 
             //make smaller
             if (transform.localScale.z > 0 && transform.localScale.y > 0 && transform.localScale.x > 0) {
@@ -167,7 +170,7 @@ public class Player : MonoBehaviour
 
                 if (transitionLoadLevel == true) {
                     if (levelScore <= currentLevelScore) {
-                        levelScore = levelScore + 1;
+                        levelScore = currentLevelScore   + 1;
                         Levels.levelScore = levelScore;
                         GameManager.levelScore = levelScore;
                         GameManager.UpdateLevel();
@@ -209,6 +212,34 @@ public class Player : MonoBehaviour
         {
             au_impact.Play();
         }
+
+        else if (other.gameObject.CompareTag("Spike"))
+        {
+            GameManager.gravityOption = 0;
+            Eyes.gameObject.SetActive(false);
+            Eyes2.gameObject.SetActive(false);
+            Eyes3.gameObject.SetActive(true);
+            animateEyes = false;
+            isDead = true;
+            GameManager.controlsEnabled = false;
+        }
+    }
+
+
+    void WhileDead() 
+    {
+        if (isDead == true) 
+        {
+            if (Input.touchCount > 0 || Input.GetKey("down") || Input.GetKey("up") || Input.GetKey("left") || Input.GetKey("right")) 
+            {
+                LoadPos();
+                animateEyes = true;
+                isDead = false;
+                GameManager.controlsEnabled = true;
+
+                
+            }
+        }
     }
 
 
@@ -229,29 +260,30 @@ public class Player : MonoBehaviour
                 child.gameObject.SetActive(!eyesClosed);
             }
         }
-
     }
 
 
     void TimeManager()
     {
-        timeLeft -= Time.deltaTime;
-        if (timeLeft < 0)
-        {
-            if (eyesClosed == false)
+        if (animateEyes == true) {
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
             {
-                SwitchEyes();
-                eyesClosed = !eyesClosed;
-            }
+                if (eyesClosed == false)
+                {
+                    SwitchEyes();
+                    eyesClosed = !eyesClosed;
+                }
 
-            blinkTime -= Time.deltaTime;
-            if (blinkTime < 0)
-            {
-                SwitchEyes();
-                timeLeft = 3.0f;
-                blinkTime = 0.15f;
-                eyesClosed = !eyesClosed;
+                blinkTime -= Time.deltaTime;
+                if (blinkTime < 0)
+                {
+                    SwitchEyes();
+                    timeLeft = 3.0f;
+                    blinkTime = 0.15f;
+                    eyesClosed = !eyesClosed;
+                }
             }
-        }
+        } 
     }
 }
