@@ -20715,61 +20715,11 @@ MonoBehaviour:
   Levels: {fileID: 1436602151}
   levelFinished: {fileID: 0}
   levelUnfinished: {fileID: 0}
---- !u!1 &1171350860 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1652836311708844, guid: 4e569b52d8dc244f2a6162c7a287c2eb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1454048099}
 --- !u!4 &1171350861 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4328205450333700, guid: 4e569b52d8dc244f2a6162c7a287c2eb,
     type: 2}
   m_PrefabInternal: {fileID: 1454048099}
---- !u!50 &1171350862
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1171350860}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &1171350863
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1171350860}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 24.550001, y: 97.46999}
-    newSize: {x: 24.550001, y: 97.46999}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 24.550001, y: 97.46999}
-  m_EdgeRadius: 0
 --- !u!4 &1198805671 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000010960922934, guid: 4c799b0fd1da6964e8b83f4baa8555b9,
@@ -24652,25 +24602,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4328205450333700, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.20878352
-      objectReference: {fileID: 0}
-    - target: {fileID: 4328205450333700, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.051366575
-      objectReference: {fileID: 0}
-    - target: {fileID: 4328205450333700, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.88446504
-      objectReference: {fileID: 0}
     - target: {fileID: 1652836311708844, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
-      propertyPath: m_TagString
-      value: Spike
-      objectReference: {fileID: 0}
-    - target: {fileID: 4328205450333700, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      propertyPath: m_Name
+      value: Thwomp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
