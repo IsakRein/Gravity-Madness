@@ -10,50 +10,51 @@ public class Player : MonoBehaviour
     private Vector3 startPosition;
     private Rigidbody2D rb;
 
-//scripts
+    //scripts
     public GameManager GameManager;
     public LevelScript Levels;
     public GoalScript Goal;
     public TextScript LevelText;
 
-    public float speed;
-
-//levels
+    //levels
     public int levelScore;
     public int currentLevelScore;
     private string levelName;
 
-//eyes
+    //eyes
     public GameObject Eyes;
     public GameObject Eyes2;
     private bool eyesClosed = false;
     public float timeLeft = 1.0f;
     public float blinkTime = 0.1f;
 
-//goalanimation
+    //goalanimation
     private bool goalAnimationBool = false;
-    public float goalAnimationSpeed = 1.0f;
     public Vector2 goalPosition;
 
-    public float smooth = 1f;
+    public float moveToMiddleSpeed = 1.0f;
+    public float rotationSpeed = 1.0f;
+    public float makeSmallerSpeed = 1.0f;
+
     private Quaternion targetRotation;
 
-//in between levels
+    //in between levels
     public CanvasGroup canvasGroup;
+    
     public float fadeInTime;
     public float fadeOutTime;
     public float visibleTime;
-    private bool InBetweenLevelsBool;
-    private bool InBetweenLevelsVisible = false;
-
-    private bool transitionLoadLevel = true;    
-    private bool transitionDisplayText = true;
-
     private float transitionTime = 0;
     private float transitionTime2 = 0;
     private float transitionTime3 = 1;
+    
+    private bool InBetweenLevelsBool = false;
+    private bool InBetweenLevelsVisible = false;
+    private bool transitionLoadLevel = true;
+    private bool transitionDisplayText = true;
 
     public Text transitionText; 
+
 
     void Start()
     {
@@ -115,18 +116,21 @@ public class Player : MonoBehaviour
         if (goalAnimationBool == true) {
             GameManager.gravityOption = -1;
             GameManager.controlsEnabled = false;
-            float step = goalAnimationSpeed * Time.deltaTime;
+            
+            float moveToMiddle = moveToMiddleSpeed * Time.deltaTime;
+            float rotate = rotationSpeed * Time.deltaTime;
+            float makeSmaller = makeSmallerSpeed * Time.deltaTime;
 
             //move to middle
-            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, target.position, moveToMiddle);
 
             //rotate
             targetRotation *=  Quaternion.AngleAxis(5, Vector3.forward);
-            transform.rotation= Quaternion.Lerp (transform.rotation, targetRotation , 10 * smooth * Time.deltaTime); 
+            transform.rotation= Quaternion.Lerp (transform.rotation, targetRotation , 10 * rotate); 
 
             //make smaller
             if (transform.localScale.z > 0 && transform.localScale.y > 0 && transform.localScale.x > 0) {
-                transform.localScale -= Vector3.one*Time.deltaTime*step;
+                transform.localScale -= Vector3.one * makeSmaller * Time.deltaTime;
             }
         }
 
@@ -161,15 +165,16 @@ public class Player : MonoBehaviour
 
                 transitionTime2 += Time.deltaTime / visibleTime;
 
-                if (levelScore == currentLevelScore) {
-                    levelScore = levelScore + 1;
-                    Levels.levelScore = levelScore;
-                    GameManager.levelScore = levelScore;
-                    GameManager.UpdateLevel();
-                }
-
                 if (transitionLoadLevel == true) {
+                    if (levelScore <= currentLevelScore) {
+                        levelScore = levelScore + 1;
+                        Levels.levelScore = levelScore;
+                        GameManager.levelScore = levelScore;
+                        GameManager.UpdateLevel();
+                    }
+
                     Levels.LevelWon();
+                    goalAnimationBool = false;
                     transitionLoadLevel = false;
                 }
             }
