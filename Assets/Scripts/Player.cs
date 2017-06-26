@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public AudioSource au_impact;
+    //public AudioSource au_impact;
     public Transform target;
 
     private Vector3 startPosition;
@@ -89,8 +89,17 @@ public class Player : MonoBehaviour
             {
                 startPosition = child.Find("PlayerPos").position;
                 transform.position = startPosition;
+
+                foreach (Transform child2 in child.transform) 
+                {
+                    if (child2.gameObject.GetComponent<ResetScriptNew>() != null) 
+                    {
+                        child2.gameObject.GetComponent<ResetScriptNew>().Reset();
+                    }
+                }
             }
         }
+
         Goal.GoalLoadPos();
 
         Eyes.gameObject.SetActive(true);
@@ -210,7 +219,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wall"))
         {
-            au_impact.Play();
+            //au_impact.Play();
         }
 
         else if (other.gameObject.CompareTag("Spike"))
