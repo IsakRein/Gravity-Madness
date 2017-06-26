@@ -15345,6 +15345,47 @@ EdgeCollider2D:
   - {x: 24.798594, y: 14.391933}
   - {x: 41.40207, y: -14.364081}
   - {x: -37.757027, y: -14.381388}
+--- !u!1 &830314874 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1652836311708844, guid: 4e569b52d8dc244f2a6162c7a287c2eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1454048099}
+--- !u!61 &830314875
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 830314874}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.8, y: 3.8}
+    newSize: {x: 24.550001, y: 97.46999}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.8, y: 3.8}
+  m_EdgeRadius: 0
+--- !u!114 &830314876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 830314874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada955897f44a4f33bbed0020d157e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &839432628
 Prefab:
   m_ObjectHideFlags: 0
@@ -19531,7 +19572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1069268230
 Transform:
   m_ObjectHideFlags: 0
@@ -24572,11 +24613,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4328205450333700, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.06
+      value: -4.19
       objectReference: {fileID: 0}
     - target: {fileID: 4328205450333700, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.58
+      value: 2.62
       objectReference: {fileID: 0}
     - target: {fileID: 4328205450333700, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
       propertyPath: m_LocalPosition.z
@@ -24606,7 +24647,27 @@ Prefab:
       propertyPath: m_Name
       value: Thwomp
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 212775536025442164, guid: 4e569b52d8dc244f2a6162c7a287c2eb,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 31bc9a35a69f547af8e0fd49ac3d0136,
+        type: 3}
+    - target: {fileID: 4328205450333700, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328205450333700, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 50219682865528250, guid: 4e569b52d8dc244f2a6162c7a287c2eb,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 61595566418686414, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4e569b52d8dc244f2a6162c7a287c2eb, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1462391386
@@ -26172,7 +26233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1568822088
 MonoBehaviour:
   m_ObjectHideFlags: 0
