@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 61511636739585756}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -305,7 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5106e7c11975ba446a870d4bef7a9f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  au_impact: {fileID: 0}
   target: {fileID: 0}
   GameManager: {fileID: 0}
   Levels: {fileID: 0}
@@ -318,6 +317,7 @@ MonoBehaviour:
   Eyes3: {fileID: 1745820987724482}
   timeLeft: 1
   blinkTime: 0.1
+  goalAnimationBool: 0
   goalPosition: {x: 0, y: 0}
   moveToMiddleSpeed: 0.85
   rotationSpeed: 1.5
@@ -326,6 +326,7 @@ MonoBehaviour:
   fadeInTime: 1.75
   fadeOutTime: 0.5
   visibleTime: 2
+  InBetweenLevelsBool: 0
   transitionText: {fileID: 0}
 --- !u!212 &212162050830158216
 SpriteRenderer:

@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour {
 
     public int gravityOption = -1;
 
-	public AudioSource au_impact;
+	//public AudioSource au_impact;
 
-    public Button gravityButtonLeft;
-    public Button gravityButtonRight;
+    //public Button gravityButtonLeft;
+    //public Button gravityButtonRight;
 
     //playbutton
     public Button playButton;
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
     private Vector2 fingerStartPos = Vector2.zero;
 
     private bool isSwipe = false;
-    private float minSwipeDist = 50.0f;
+    private float minSwipeDist = 10.0f;
     private float maxSwipeTime = 0.5f;
 
     public bool controlsEnabled = true;
@@ -70,6 +70,11 @@ public class GameManager : MonoBehaviour {
         rb.isKinematic = false;
         ArrowsControl();
         CheckGravity();
+
+        if (Input.touchCount == 0 && !Input.anyKey && Player.goalAnimationBool == false && Player.InBetweenLevelsBool == false) 
+        {
+            controlsEnabled = true;
+        }
     }
 
     

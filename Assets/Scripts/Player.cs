@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -29,10 +29,10 @@ public class Player : MonoBehaviour
     private bool isDead = false;
     private bool eyesClosed = false;
     public float timeLeft = 1.0f;
-    public float blinkTime = 0.1f;
+    public float blinkTime = 0.15f;
 
     //goalanimation
-    private bool goalAnimationBool = false;
+    public bool goalAnimationBool = false;
     public Vector2 goalPosition;
 
     public float moveToMiddleSpeed = 1.0f;
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     private float transitionTime2 = 0;
     private float transitionTime3 = 1;
     
-    private bool InBetweenLevelsBool = false;
+    public bool InBetweenLevelsBool = false;
     private bool InBetweenLevelsVisible = false;
     private bool transitionLoadLevel = true;
     private bool transitionDisplayText = true;
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
         TimeManager();
         GoalAnimation();
         InBetweenLevels();
-        WhileDead();
+        WhileDead();        
     }
 
 
@@ -92,9 +92,9 @@ public class Player : MonoBehaviour
 
                 foreach (Transform child2 in child.transform) 
                 {
-                    if (child2.gameObject.GetComponent<ResetScriptNew>() != null) 
+                    if (child2.gameObject.GetComponent<ThwompScript>() != null) 
                     {
-                        child2.gameObject.GetComponent<ResetScriptNew>().Reset();
+                        child2.gameObject.GetComponent<ThwompScript>().Reset();
                     }
                 }
             }
@@ -111,6 +111,7 @@ public class Player : MonoBehaviour
         GameManager.gravityOption = -1;
 
         LevelText.txt.text = "" + currentLevelScore;
+        GameManager.controlsEnabled = false;
     }
 
 
@@ -224,13 +225,16 @@ public class Player : MonoBehaviour
 
         else if (other.gameObject.CompareTag("Spike"))
         {
-            GameManager.gravityOption = 0;
-            Eyes.gameObject.SetActive(false);
-            Eyes2.gameObject.SetActive(false);
-            Eyes3.gameObject.SetActive(true);
-            animateEyes = false;
-            isDead = true;
-            GameManager.controlsEnabled = false;
+            if (goalAnimationBool == false) 
+            {
+                GameManager.gravityOption = 0;
+                Eyes.gameObject.SetActive(false);
+                Eyes2.gameObject.SetActive(false);
+                Eyes3.gameObject.SetActive(true);
+                animateEyes = false;
+                isDead = true;
+                GameManager.controlsEnabled = false;
+            }
         }
     }
 
@@ -244,9 +248,6 @@ public class Player : MonoBehaviour
                 LoadPos();
                 animateEyes = true;
                 isDead = false;
-                GameManager.controlsEnabled = true;
-
-                
             }
         }
     }
