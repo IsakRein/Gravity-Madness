@@ -12,7 +12,7 @@ public class ThwompScript : MonoBehaviour {
 
 	private bool directionAtStart;
 
-	public Vector3 startPosition;
+	private Vector3 startPosition;
 
     private bool animateEyes = true;
     private bool eyesClosed = false;
@@ -61,8 +61,6 @@ public class ThwompScript : MonoBehaviour {
 			}
 		}
 		TimeManager(); 
-
-		
 	}
 
 

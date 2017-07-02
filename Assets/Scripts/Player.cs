@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     public GameObject Eyes2;
     public GameObject Eyes3;
     private bool animateEyes = true;
-    private bool isDead = false;
+    public bool isDead = false;
     private bool eyesClosed = false;
     public float timeLeft = 1.0f;
     public float blinkTime = 0.15f;
@@ -95,6 +95,11 @@ public class Player : MonoBehaviour
                     if (child2.gameObject.GetComponent<ThwompScript>() != null) 
                     {
                         child2.gameObject.GetComponent<ThwompScript>().Reset();
+                    }
+
+                    if (child2.gameObject.GetComponent<FollowerScript>() != null) 
+                    {
+                        child2.gameObject.GetComponent<FollowerScript>().Reset();
                     }
                 }
             }
