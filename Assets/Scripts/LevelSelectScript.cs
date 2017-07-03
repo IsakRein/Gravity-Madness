@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -91,7 +91,6 @@ public class LevelSelectScript : MonoBehaviour {
             btn.interactable = true;
         }
     }
-
 
     void ActivateLevel()
     {

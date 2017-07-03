@@ -58,6 +58,8 @@ public class Player : MonoBehaviour
 
     public Text transitionText; 
 
+    private Collider2D collider;
+
 
     void Start()
     {
@@ -66,6 +68,7 @@ public class Player : MonoBehaviour
         LoadPos();
 
         targetRotation = transform.rotation;
+        collider = GetComponent<Collider2D>();
     }
 
 
@@ -134,7 +137,8 @@ public class Player : MonoBehaviour
         if (goalAnimationBool == true) {
             GameManager.gravityOption = -1;
             GameManager.controlsEnabled = false;
-            
+            collider.isTrigger = true;
+
             float moveToMiddle = moveToMiddleSpeed * Time.deltaTime;
             float rotate = rotationSpeed * Time.deltaTime;
             float makeSmaller = makeSmallerSpeed * Time.deltaTime;
@@ -209,6 +213,8 @@ public class Player : MonoBehaviour
                     InBetweenLevelsVisible = false;
                     transitionLoadLevel = true;
                     transitionDisplayText = true;
+                    collider.isTrigger = false;
+
                     
                     transitionTime = 0;
                     transitionTime2 = 0;
