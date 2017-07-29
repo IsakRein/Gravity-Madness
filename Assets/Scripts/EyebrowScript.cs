@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ public class EyebrowScript : MonoBehaviour {
 	{
 	   rotation = transform.rotation;
 	}
-	
+
 	void Update () 
 	{
 		transform.position = target.position + new Vector3 (0, 0.24f, 0);

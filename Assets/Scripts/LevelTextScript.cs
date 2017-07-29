@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -13,14 +13,20 @@ public class LevelTextScript : MonoBehaviour {
     {
         string a = gameObject.transform.parent.transform.name;
         string b = string.Empty;
+        
         for (int i = 0; i < a.Length; i++)
         {
-            if (Char.IsDigit(a[i]))
+            if (Char.IsDigit(a[i])) 
+            {
                 b += a[i];
+            }
         }
 
-        if (b.Length > 0)
+        if (b.Length > 0) 
+        {
             currentLevel = int.Parse(b);
+        }
+
         txt = gameObject.GetComponent<Text>();
         txt.text = "" + currentLevel;
         txt.fontSize = 125;

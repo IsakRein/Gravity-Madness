@@ -87,6 +87,42 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Assets/Scripts/FollowerScript.cs",
+			"settings":
+			{
+				"buffer_size": 1789,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Player.cs",
+			"settings":
+			{
+				"buffer_size": 8713,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/GoalScript.cs",
+			"settings":
+			{
+				"buffer_size": 2360,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/GameManager.cs",
+			"settings":
+			{
+				"buffer_size": 6740,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -96,11 +132,43 @@
 	"command_palette":
 	{
 		"height": 354.0,
-		"last_filter": "packa",
+		"last_filter": "list",
 		"selected_items":
 		[
 			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
 				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remopa",
+				"Package Control: Remove Package"
+			],
+			[
+				"pakc",
 				"Package Control: Install Package"
 			],
 			[
@@ -116,10 +184,6 @@
 				"Material Theme: Activate theme"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"browse packages",
 				"Preferences: Browse Packages"
 			],
@@ -132,11 +196,11 @@
 				"Install Package Control"
 			]
 		],
-		"width": 467.0
+		"width": 602.0
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 188.0,
 		"history":
 		[
 		]
@@ -152,13 +216,20 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness"
+		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts"
 	],
 	"file_history":
 	[
+		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/GoBack.cs",
 		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/EyebrowScript.cs",
-		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/FollowerScript.cs",
+		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/LevelTextScript.cs",
+		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/NavScript.cs",
+		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Gravity-Madness.sublime-project",
 		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/GameManager.cs",
+		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/ThwompScript.cs",
+		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/EyeScript.cs",
+		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/LevelSelectScript.cs",
+		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/FollowerScript.cs",
 		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/GoalScript.cs",
 		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/Player.cs",
 		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/FollowerScript.cs",
@@ -166,12 +237,11 @@
 		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Reset.cs",
 		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/ThwompScript.cs.meta",
 		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/ThwompScript.cs",
-		"/Users/isakreinholdsson/Documents/Unity/Gravity-Madness/Assets/Scripts/GoBack.cs",
 		"/Users/isakreinholdsson/Documents/Unity/GravityMadness/Gravity Madness/Assets/Scripts/LevelTextScript.cs"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 70.0
 	},
 	"find_in_files":
 	{
@@ -185,6 +255,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"level",
 			"isdead",
 			"thwompscript",
 			"startposition",
@@ -220,8 +291,126 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Assets/Scripts/FollowerScript.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1789,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								950,
+								950
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Scripts/Player.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5811,
+								5815
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3080.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Assets/Scripts/GoalScript.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1897,
+								1897
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 869.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Assets/Scripts/GameManager.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6740,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								44,
+								44
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 14.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -264,6 +453,10 @@
 	{
 		"height": 0.0
 	},
+	"output.variable_get":
+	{
+		"height": 0.0
+	},
 	"pinned_build_system": "",
 	"project": "Gravity-Madness.sublime-project",
 	"replace":
@@ -282,12 +475,12 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{

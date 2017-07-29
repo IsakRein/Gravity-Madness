@@ -120,6 +120,8 @@ public class Player : MonoBehaviour
 
         LevelText.txt.text = "" + currentLevelScore;
         GameManager.controlsEnabled = false;
+
+        Goal.UpdateTime(currentLevelScore);
     }
 
 
@@ -238,15 +240,21 @@ public class Player : MonoBehaviour
         {
             if (goalAnimationBool == false) 
             {
-                GameManager.gravityOption = 0;
-                Eyes.gameObject.SetActive(false);
-                Eyes2.gameObject.SetActive(false);
-                Eyes3.gameObject.SetActive(true);
-                animateEyes = false;
-                isDead = true;
-                GameManager.controlsEnabled = false;
+                Death();
             }
         }
+    }
+
+
+    public void Death() 
+    {
+        GameManager.gravityOption = 0;
+        Eyes.gameObject.SetActive(false);
+        Eyes2.gameObject.SetActive(false);
+        Eyes3.gameObject.SetActive(true);
+        animateEyes = false;
+        isDead = true;
+        GameManager.controlsEnabled = false;
     }
 
 

@@ -15,12 +15,13 @@ public class FollowerScript : MonoBehaviour {
 
 	private Rigidbody2D rb;
 
+	
 	void Start () 
 	{
 		gameStarted = true;
 		startPosition = transform.position;
 		assignedSpeed = speed;
-
+		
 		rb = GetComponent<Rigidbody2D>();
 	}
 	
@@ -34,6 +35,7 @@ public class FollowerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{    
+
         if (GameManager.gravityOption != -1)
         {
         	//move towards the player
@@ -43,7 +45,7 @@ public class FollowerScript : MonoBehaviour {
 	    }
 
 
-	    if (Player.InBetweenLevelsBool || Player.isDead) 
+	    if (Player.goalAnimationBool || Player.isDead) 
 	    {
 	    	assignedSpeed -= 1.5f * Time.deltaTime;
 	    	if (assignedSpeed <= 0) 

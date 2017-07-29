@@ -35,6 +35,8 @@ public class ThwompScript : MonoBehaviour {
 
 	}
 
+	
+
 
 	void OnDisable ()	
 	{

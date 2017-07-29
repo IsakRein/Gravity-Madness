@@ -4,12 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-//hej mån 21:03
-
-
 public class GoBack : MonoBehaviour
 {
-
     public Button btn;
 
     public GameObject deActivate;
