@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -33,6 +33,26 @@ public class GameManager : MonoBehaviour {
 
     public bool controlsEnabled = true;
 
+    //animator left
+    public Animator animatorLeft;
+    public Transform GravitySwitchAnimLeft;
+    public Renderer GravitySwitchRendLeft;
+
+    //animator up
+    public Animator animatorUp;
+    public Transform GravitySwitchAnimUp;
+    public Renderer GravitySwitchRendUp;
+
+    //animator right
+    public Animator animatorRight;
+    public Transform GravitySwitchAnimRight;
+    public Renderer GravitySwitchRendRight;
+
+    //animator down
+    public Animator animatorDown;
+    public Transform GravitySwitchAnimDown;
+    public Renderer GravitySwitchRendDown;
+
 
     void Start () {
         game.gameObject.SetActive(false);
@@ -60,6 +80,11 @@ public class GameManager : MonoBehaviour {
         {
             levelScore = 1;
         }
+
+        GravitySwitchRendLeft.enabled = false;
+        GravitySwitchRendUp.enabled = false;
+        GravitySwitchRendRight.enabled = false;
+        GravitySwitchRendDown.enabled = false;
     }
 
 
@@ -70,6 +95,7 @@ public class GameManager : MonoBehaviour {
         rb.isKinematic = false;
         ArrowsControl();
         CheckGravity();
+
 
         if (Input.touchCount == 0 && !Input.anyKey && Player.goalAnimationBool == false && Player.InBetweenLevelsBool == false) 
         {
@@ -122,11 +148,13 @@ public class GameManager : MonoBehaviour {
                             {
                                 if (swipeType.x > 0.0f)
                                 {
-                                    gravityOption = 1;
+                                    //right
+                                    RightGravity();
                                 }
                                 else
                                 {
-                                    gravityOption = 3;
+                                    //left
+                                    LeftGravity();
                                 }
                             }
 
@@ -134,11 +162,13 @@ public class GameManager : MonoBehaviour {
                             {
                                 if (swipeType.y > 0.0f)
                                 {
-                                    gravityOption = 2;
+                                    //up
+                                    UpGravity();
                                 }
                                 else
                                 {
-                                    gravityOption = 0;
+                                    //down
+                                    DownGravity();
                                 }
                             }
                         }
@@ -157,22 +187,70 @@ public class GameManager : MonoBehaviour {
     void ArrowsControl()
     {
         if (controlsEnabled == true) {
-            if (Input.GetKey("down"))
-            {
-                gravityOption = 0;
-            }
             if (Input.GetKey("left"))
             {
-                gravityOption = 3;
+                LeftGravity();
             }
             if (Input.GetKey("up"))
             {
-                gravityOption = 2;
+                UpGravity();
             }
             if (Input.GetKey("right"))
             {
-                gravityOption = 1;
+                RightGravity();   
             }
+            if (Input.GetKey("down"))
+            {
+                DownGravity();
+            }  
+        }
+    }
+
+
+    void LeftGravity() 
+    {
+        if (gravityOption != 3) 
+        {
+            GravitySwitchRendLeft.enabled = true;
+            gravityOption = 3;
+            GravitySwitchAnimLeft.transform.rotation = Quaternion.Euler(0, 0, 0);
+            animatorLeft.SetTrigger("LeftTrig");
+        }
+    }
+
+
+    void UpGravity() 
+    {   
+        if (gravityOption != 2) 
+        {
+            GravitySwitchRendUp.enabled = true;
+            GravitySwitchAnimUp.transform.rotation = Quaternion.Euler(0, 0, -90);
+            animatorUp.SetTrigger("UpTrig");
+            gravityOption = 2;
+        }
+    }
+
+
+    void RightGravity() 
+    {
+        if (gravityOption != 1) 
+        {
+            GravitySwitchRendRight.enabled = true;
+            gravityOption = 1;
+            GravitySwitchAnimRight.transform.rotation = Quaternion.Euler(0, 0, 180);
+            animatorRight.SetTrigger("RightTrig");    
+        }    
+    }
+
+
+    void DownGravity() 
+    {
+        if (gravityOption != 0) 
+        {
+            GravitySwitchRendDown.enabled = true;
+            gravityOption = 0;
+            GravitySwitchAnimDown.transform.rotation = Quaternion.Euler(0, 0, 90);
+            animatorDown.SetTrigger("DownTrig");
         }
     }
 

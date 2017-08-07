@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
         TimeManager();
         GoalAnimation();
         InBetweenLevels();
-        WhileDead();        
+        WhileDead(); 
     }
 
 

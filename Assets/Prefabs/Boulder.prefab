@@ -248,7 +248,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1652836311708844}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b5b8a4347220d474a8bdcb60a04a385d, type: 2}
   m_CullingMode: 0
@@ -274,7 +274,6 @@ MonoBehaviour:
   wait: 0
   startWaitTime: 1
   wallWaitTime: 1
-  startPosition: {x: 0, y: 0, z: 0}
   timeLeft: 2
   blinkTime: 0.15
 --- !u!114 &114629871549401610

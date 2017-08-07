@@ -1,0 +1,12 @@
+Adobe After Effects v13.5 Windows 64 render log for project “GravitySwitch.aep”
+
+Rendering started on 8/6/2017 at 10:15:29 AM
+
+  8/6/2017 10:15:29 AM: Starting composition “Together”.
+
+  Output To: D:\Unity\Gravity-Madness\Art\GravitySwitch\Together\GravitySwitch_[#####].png    8/6/2017 10:15:31 AM: Finished composition “Together”.
+
+
+  Total Time Elapsed: 2 Seconds
+Log closed on 8/6/2017 at 10:15:31 AM
+

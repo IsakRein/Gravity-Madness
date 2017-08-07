@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,7 +24,7 @@ public class GoalScript : MonoBehaviour {
 
     void Update () 
     {
-        if (GameManager.gravityOption != -1 && TimeLeft > 0)
+        if (GameManager.gravityOption != -1 && TimeLeft > 0 && timeArray[currentLevelScore] != 0)
         {
             TimeLeft -= Time.deltaTime;
             goalText.text = "" + Mathf.Ceil(TimeLeft);
