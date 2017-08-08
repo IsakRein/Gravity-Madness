@@ -11,6 +11,11 @@ public class GoBack : MonoBehaviour
     public GameObject deActivate;
     public GameObject Activate;
 
+    public SpriteRenderer gsLeft;
+    public SpriteRenderer gsUp;
+    public SpriteRenderer gsRight;
+    public SpriteRenderer gsDown;
+
     void Start()
     {
         btn.onClick.AddListener(activate);
@@ -20,6 +25,8 @@ public class GoBack : MonoBehaviour
     {
         deActivate.SetActive(false);
         Activate.SetActive(true);
+
+        gsLeft =
     }
 
     void Update()

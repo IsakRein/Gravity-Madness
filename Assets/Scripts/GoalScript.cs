@@ -40,6 +40,7 @@ public class GoalScript : MonoBehaviour {
         if (timeArray[Level] == 0) 
         {
             goalText.text = "";
+            TimeLeft = timeArray[Level];
         }
         
         else 
