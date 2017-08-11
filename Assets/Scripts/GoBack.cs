@@ -26,7 +26,10 @@ public class GoBack : MonoBehaviour
         deActivate.SetActive(false);
         Activate.SetActive(true);
 
-        gsLeft =
+        gsLeft.enabled = false;
+        gsUp.enabled = false;
+        gsRight.enabled = false;
+        gsDown.enabled = false;
     }
 
     void Update()

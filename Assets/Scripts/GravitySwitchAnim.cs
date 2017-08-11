@@ -21,8 +21,7 @@ public class GravitySwitchAnim : MonoBehaviour {
 
 	public void DontRender() 
 	{
-		SpriteR.enabled = false;
-		
+		SpriteR.enabled = false;	
 		Animator.ResetTrigger(str);
 	}
 }
