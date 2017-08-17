@@ -58,7 +58,7 @@ public class LevelScript : MonoBehaviour {
     }
 
 
-    void MakeButtonInteractable()
+    public void MakeButtonInteractable()
     {
         if (currentLevelScore == 1)
         {

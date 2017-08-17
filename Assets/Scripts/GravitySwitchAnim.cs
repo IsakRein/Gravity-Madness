@@ -4,13 +4,14 @@ using UnityEngine;
 
 
 public class GravitySwitchAnim : MonoBehaviour {
-	private Animator Animator;
+	private Animator GravityAnimator;
 	private SpriteRenderer SpriteR;
 	public string str;
 	
 	void Start() 
 	{
 		Time.timeScale = 1; 
+		GravityAnimator = gameObject.GetComponent<Animator>();
 		SpriteR = gameObject.GetComponent<SpriteRenderer>();
 	}
 
@@ -22,6 +23,6 @@ public class GravitySwitchAnim : MonoBehaviour {
 	public void DontRender() 
 	{
 		SpriteR.enabled = false;	
-		Animator.ResetTrigger(str);
+		GravityAnimator.ResetTrigger(str);
 	}
 }

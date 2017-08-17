@@ -122,6 +122,8 @@ public class Player : MonoBehaviour
         GameManager.controlsEnabled = false;
 
         Goal.UpdateTime(currentLevelScore);
+
+        Levels.MakeButtonInteractable();
     }
 
 
