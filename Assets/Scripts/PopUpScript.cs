@@ -7,6 +7,14 @@ public class PopUpScript : MonoBehaviour {
 	public Animator PopUpAnim;
 	public Animator BackgroundAnim;
 
+	void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PopOut();
+        }
+    }
+
 	public void PopIn() 
 	{
 		gameObject.SetActive(true);

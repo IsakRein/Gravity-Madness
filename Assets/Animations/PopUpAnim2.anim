@@ -22,14 +22,14 @@ AnimationClip:
       - serializedVersion: 2
         time: 0
         value: 0
-        inSlope: 99.85077
-        outSlope: 99.85077
+        inSlope: -669.808
+        outSlope: -669.808
         tangentMode: 0
       - serializedVersion: 2
         time: 0.33333334
         value: 2135.54
-        inSlope: 14996.994
-        outSlope: 14996.994
+        inSlope: 8753.175
+        outSlope: 8753.175
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -81,14 +81,14 @@ AnimationClip:
       - serializedVersion: 2
         time: 0
         value: 0
-        inSlope: 99.85077
-        outSlope: 99.85077
+        inSlope: -669.808
+        outSlope: -669.808
         tangentMode: 0
       - serializedVersion: 2
         time: 0.33333334
         value: 2135.54
-        inSlope: 14996.994
-        outSlope: 14996.994
+        inSlope: 8753.175
+        outSlope: 8753.175
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -101,4 +101,11 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.33333334
+    functionName: Disable
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

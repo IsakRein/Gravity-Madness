@@ -192,8 +192,8 @@ public class Player : MonoBehaviour
                 transitionTime2 += Time.deltaTime / visibleTime;
 
                 if (transitionLoadLevel == true) {
-                    if (levelScore <= currentLevelScore) {
-                        levelScore = currentLevelScore   + 1;
+                    if (levelScore == currentLevelScore) {
+                        levelScore = currentLevelScore + 1;
                         Levels.levelScore = levelScore;
                         GameManager.levelScore = levelScore;
                         GameManager.UpdateLevel();

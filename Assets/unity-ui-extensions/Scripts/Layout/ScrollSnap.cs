@@ -112,7 +112,7 @@ namespace UnityEngine.UI.Extensions
             scrollRectTransform = gameObject.GetComponent<RectTransform>();
             listContainerTransform = scrollRect.content;
             listContainerRectTransform = listContainerTransform.GetComponent<RectTransform>();
-
+    
             rectTransform = listContainerTransform.gameObject.GetComponent<RectTransform>();
             UpdateListItemsSize();
             UpdateListItemPositions();
