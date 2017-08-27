@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
     public float rotationSpeed = 1.0f;
     public float makeSmallerSpeed = 1.0f;
 
+	public float playerScale;
+
     private Quaternion targetRotation;
 
     //in between levels
@@ -115,7 +117,7 @@ public class Player : MonoBehaviour
         Eyes3.gameObject.SetActive(false);
 
         transform.localEulerAngles = new Vector3(0,0,0);
-        transform.localScale = new Vector3(0.0165f, 0.0165f, 1f);
+		transform.localScale = new Vector3(playerScale, playerScale, 1f);
         GameManager.gravityOption = -1;
 
         LevelText.txt.text = "" + currentLevelScore;
